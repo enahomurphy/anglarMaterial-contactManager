@@ -1,0 +1,10 @@
+<md-bottom-sheet class="md-list md-has-header" >
+  <md-subheader>contact {{ cp.user.name }}</md-subheader>
+  <md-list layout="column">
+    <md-list-item ng-repeat="item in cp.actions">
+       <md-button ng-click="cp.contact(item)">
+         <md-icon md-svg-src="{{ item.icon }}"></md-icon>
+          {{ item.name }}</md-button>
+    </md-list-item>
+  </md-list>
+</md-bottom-sheet>

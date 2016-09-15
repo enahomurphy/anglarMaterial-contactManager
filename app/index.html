@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="contactManager">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="decription" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400|Source+Serif+Pro" rel="stylesheet">    
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="./bower_components/angular-material-icons/angular-material-icons.css">
+    <link rel="stylesheet" href="./assets/css/app.css">
+</head>
+
+<body layout="row" ng-cloak ng-controller="mainController as vm">
+
+    
+    <div ng-include="'./dist/view/sidebar.html'" layout="vertical"></div>
+
+    <div layout="column" flex id="wrapper">
+        <div ng-include="'./dist/view/toolbar-header.html'"></div>
+        <div class="content" >
+            <div ng-include="'./dist/view/maincontent.html'"></div>
+            <md-tabs md-selected="vm.tabIndex"
+                     md-dynamic-height=""
+                     md-stretch-tabs="always">
+                <md-tab label="Bio">
+                    <div ng-include="'./dist/view/user-bio.html'"></div>
+                </md-tab>
+                <md-tab label="Notes">
+                    <div ng-include="'./dist/view/user-notes.html'"></div>
+                </md-tab>
+            </md-tab>
+        </div>
+        
+    </div>
+
+
+
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.js"></script>
+    <script src="./bower_components/angular-material/angular-material.js"></script>
+    <script src="./bower_components/angular-material-icons/angular-material-icons.js"></script>
+
+    
+    
+    <script src="./dist/model.js"></script>
+    <script src="./dist/services/userServices.js"></script>
+    <script src="./dist/controllers/mainController.js"></script>
+     <script src="./dist/controllers/contactPanelController.js"></script>
+    <script src="./dist/controllers/addUserDialogController.js"></script>
+    <script src="./dist/boot.js"></script>
+</body>
+
+</html>

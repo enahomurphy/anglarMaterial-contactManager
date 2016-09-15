@@ -1,0 +1,39 @@
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 20px;
+    margin: auto;
+}
+
+.content{
+    padding:20px;
+
+}
+
+.user-list md-list, .user-list .md-button  {
+    text-align: left;
+    width: 100%;
+    /*height: 50px;*/
+}
+
+.user-list .md-button.selected {
+    color: #03a9f4;
+}
+.avatar {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    padding: 10px
+}
+.avatar svg {
+    width:100%;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    margin-left: right
+}

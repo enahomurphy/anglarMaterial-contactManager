@@ -1,0 +1,23 @@
+<md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="4">
+    <md-toolbar>
+        <h1>Contact</h1>
+    </md-toolbar>
+    <div layout-padding>
+        <md-autocomplete md-search-text="vm.searchText" md-items="item in vm.users | filter:vm.searchText" md-item-text="item.name" md-min-length="3" md-floating-label="filter" placeholder="filter">
+            <md-item-template>
+                <span md-highlight-text="vm.searchText" md-highlight-flags="^i">{{item.name}}</span>
+            </md-item-template>
+            <md-not-found>
+                No states matching "{{ vm.searchText }}" were found.
+            </md-not-found>
+        </md-autocomplete>
+    </div>
+    <md-list class="user-list" ng-repeat="user in vm.users | filter:vm.searchText | orderBy: 'user.name'">
+        <md-button id="button-id" ng-click="vm.selectedUser(user)" ng-class="{'selected': user === vm.selected}">
+            <md-icon md-svg-src="{{ user.avatar }}" class="avatar"></md-icon>{{ user.name }} 
+        </md-button>
+    </md-list>
+    <md-button class="md-fab md-fab-bottom-right" ng-click="vm.addUser($event)">
+        <ng-md-icon icon="add"></ng-md-icon>
+    </md-button>
+</md-sidenav>

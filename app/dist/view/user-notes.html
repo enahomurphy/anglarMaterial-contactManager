@@ -1,0 +1,27 @@
+<p ng-if="vm.selected.notes.length < 1">no notes found for {{ vm.selected.name }}</p>
+<md-content>
+    <!--<form ng-submit="vm.addNote()">
+        <div layout="row" layout-padding>
+            <md-input-container flex >
+                <label >Title </label>
+                <input type="text" required ng-model="vm.newNote.title">
+            </md-input-container >
+            <md-input-container flex-gt-sm>
+              <label>Enter a Date</label>
+               <md-datepicker  placeholder="Enter a Date" ng-model='vm.newNote.date'></md-datepicker>
+            </md-input-container>
+            <div class="md-actions">
+              <md-button type="submit" class="md-primary md-raised">ADD</md-button>
+            </div>
+        </div>
+    </form>-->
+    <md-card ng-repeat="note in vm.selected.notes | orderBy: '-date':true ">
+      <md-card-content>
+        <h3>{{ note.title }}</h3>
+        <p>{{ note.date | date:'MM/dd/yy'}}</p>
+      </md-card-content>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button ng-click="vm.removeNote(note)">Remove</md-button>
+      </md-card-actions>
+    </md-card>
+</md-content>
